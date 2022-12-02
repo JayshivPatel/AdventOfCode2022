@@ -1,8 +1,8 @@
 import scala.io.Source
 object Main {
   val WIN = 6
-  val LOSS = 0
   val DRAW = 3
+  val LOSS = 0
   val ROCK = 1
   val PAPER = 2
   val SCISSORS = 3
@@ -15,14 +15,10 @@ object Main {
   }
 
   def calculateScore(args: Array[String]): Int = {
-    args.map(x => pointsGained(x)).sum
-  }
-
-  def pointsGained(input: String): Int = {
-    if (input.length == 3) {
-      pointsGained(input.charAt(0), input.charAt(2))
-    } else
-      0
+    args.map(x => {
+      if (x.length == 3)
+        pointsGained(x.charAt(0), x.charAt(2)) else 0
+    }).sum
   }
 
   def pointsGained(opponent: Char, you: Char): Int = {
