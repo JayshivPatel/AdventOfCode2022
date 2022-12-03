@@ -1,5 +1,4 @@
 import scala.io.Source
-import scala.util.control.Breaks._
 
 object Main {
   def main(args: Array[String]): Unit = {
